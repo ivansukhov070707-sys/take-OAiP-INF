@@ -24,8 +24,9 @@ int main() {
  
    n[max] = x;
 
-    cout << "Ðåçóëüòàò:" << endl;
+    cout << "ÃÃ¥Ã§Ã³Ã«Ã¼Ã²Ã Ã²:" << endl;
     for (int i = 0; i < N; i++) {
         cout << n[i] << " ";
     }
+return 0;
 }
