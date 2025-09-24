@@ -15,9 +15,10 @@ int main() {
     }
     if (max < min) {
         double r = n[min] * n[max];
-        cout << "Ïðîèçâåäåíèå: " << r << endl;
+        cout << "ÃÃ°Ã®Ã¨Ã§Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¥: " << r << endl;
     }
     else {
-        cout << "Óñëîâèå íå âûïîëíÿåòñÿ" << endl;
+        cout << "Ã“Ã±Ã«Ã®Ã¢Ã¨Ã¥ Ã­Ã¥ Ã¢Ã»Ã¯Ã®Ã«Ã­Ã¿Ã¥Ã²Ã±Ã¿" << endl;
     }
+return 0;
 }
