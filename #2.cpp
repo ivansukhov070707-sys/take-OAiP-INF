@@ -1,10 +1,13 @@
 #include <iostream>
-using namespace std;
-
-int main() {
+int main()
+{
     setlocale(LC_ALL, "RU");
-    for (int i = 1; i <= 10; i++) {
-        cout << i << " - " << i * 10 << " ���"<<endl;
-    }
-    return 0;
+    float i = 0;
+    float b = 0;
+    std::cout << "Введите длину" << std::endl;
+    std::cin >> i;
+    std::cout << "Введите ширину" << std::endl;
+    std::cin >> b;
+    std::cout << i * b << std::endl;
+	return 0;
 }
