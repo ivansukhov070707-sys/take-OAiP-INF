@@ -1,40 +1,45 @@
 #include <iostream>
 using namespace std;
+
 int main() {
-	setlocale(LC_ALL, "RU");
-	const int s = 10;
-	int arr[s];
-	for (int i = 0;i<s;i++){
-		cin >> arr[i];
-	}
-	cout << "Õ‡˜‡Î¸Ì˚È Ï‡ÒÒË‚: " << endl;
-	for (int i = 0;i<s;i++){
-		cout << arr[i] << " ";
-	}
-	cout << endl;
-	int sum = 0;
-	for (int i = 0; i < s; i++) {
-		sum += arr[i];
-	}
-	cout << "—ÛÏÏ‡ = " << sum << endl;
-		int min = 0;
-		for (int i = 1; i < s; i++) {
-			if (arr[i] < arr[min])
-				min = arr[i];
-	}
-	cout <<"ÃËÌËÏ‡Î¸Ì˚È ˝ÎÂÏÂÌÚ Ï‡ÒÒË‚‡ "<< min << endl;
-	for (int i = 0; i < s-1; i++){
-		for (int w = 0; w < s - i - 1; w++) {
-			if (arr[w] > arr[w + 1]) {
-				int t = arr[w];
-				arr[w] = arr[w + 1];
-				arr[w + 1] = t;
-			}
-		}
-	}
-	cout << "»ÚÓ„Ó‚˚È Ï‡ÒÒË‚ " << endl;
-	for (int i = 0; i < s; i++) {
-		cout << arr[i] << " ";
-	}
-	return 0;
-}	
+    setlocale(LC_ALL,"RU");
+    const int s = 10;
+    int arr[s];
+    cout << "–í–≤–µ–¥–∏—Ç–µ 10 —Ü–µ–ª—ã—Ö —á–∏—Å–µ–ª:" << endl;
+    for (int i = 0; i < s; i++) {
+        cin >> arr[i];
+    }
+    cout << "–ù–∞—á–∞–ª—å–Ω—ã–π –º–∞—Å—Å–∏–≤: ";
+    for (int i = 0; i < s; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    int sum = 0;
+    for (int i = 0; i < s; i++) {
+        sum += arr[i];
+    }
+    cout << "–°—É–º–º–∞: " << sum << endl;
+    int min = arr[0];
+    for (int i = 1; i < s; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    cout << "–ú–∏–Ω–∏–º–∞–ª—å–Ω—ã–π —ç–ª–µ–º–µ–Ω—Ç: " << min << endl;
+    for (int i = 0; i < s - 1; i++) {
+        for (int w = 0; w < s - i - 1; w++) {
+            if (arr[w] > arr[w + 1]) {
+                // –û–±–º–µ–Ω —ç–ª–µ–º–µ–Ω—Ç–æ–≤
+                int temp = arr[w];
+                arr[w] = arr[w + 1];
+                arr[w + 1] = temp;
+            }
+        }
+    }
+    cout << "–û—Ç—Å–æ—Ä—Ç–∏—Ä–æ–≤–∞–Ω–Ω—ã–π –º–∞—Å—Å–∏–≤: ";
+    for (int i = 0; i < s; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    return 0;
+}
