@@ -7,17 +7,17 @@ int main() {
     int n;
     cin >> n;
     if (n <= 0) {
-        cout << "ââåäè íàòóð ÷èñëî" << endl;
+        cout << "Ã¢Ã¢Ã¥Ã¤Ã¨ Ã­Ã Ã²Ã³Ã° Ã·Ã¨Ã±Ã«Ã®" << endl;
     }
     vector<int> A(n);
     for (int i = 0; i < n; i++) {
         cin >> A[i];
         if (A[i] <= 0) {
-            cout << "×èñëà äîëæíû áûòü íàòóðàëüíûìè!" << endl;
+            cout << "Ã—Ã¨Ã±Ã«Ã  Ã¤Ã®Ã«Ã¦Ã­Ã» Ã¡Ã»Ã²Ã¼ Ã­Ã Ã²Ã³Ã°Ã Ã«Ã¼Ã­Ã»Ã¬Ã¨!" << endl;
         }
     }
     int count = 0;
-    cout << "\nÐåçóëüòàòû ïðîâåðêè:" << endl;
+    cout << "\nÃÃ¥Ã§Ã³Ã«Ã¼Ã²Ã Ã²Ã» Ã¯Ã°Ã®Ã¢Ã¥Ã°ÃªÃ¨:" << endl;
     cout << "k\tAk\t2^k\tAk > 2k" << endl;
 
     for (int k = 1; k <= n; k++) {
@@ -27,20 +27,20 @@ int main() {
 
         cout << k << "\t" << ak << "\t" << two_k << "\t";
         if (condition) {
-            cout << "ÄÀ";
+            cout << "Ã„Ã€";
             count++;
         }
         else {
-            cout << "íåò";
+            cout << "Ã­Ã¥Ã²";
         }
         cout << endl;
     }
-    cout << "\nÊîëè÷åñòâî ýëåìåíòîâ, óäîâëåòâîðÿþùèõ óñëîâèþ Ak > 2^k: " << count << endl;
+    cout << "\nÃŠÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã½Ã«Ã¥Ã¬Ã¥Ã­Ã²Ã®Ã¢, Ã³Ã¤Ã®Ã¢Ã«Ã¥Ã²Ã¢Ã®Ã°Ã¿Ã¾Ã¹Ã¨Ãµ Ã³Ã±Ã«Ã®Ã¢Ã¨Ã¾ Ak > 2^k: " << count << endl;
 
     return 0;
 }
  
- //íîìåð 2
+ //Ã­Ã®Ã¬Ã¥Ã° 2
  
 #include <iostream>
 #include <climits>
@@ -54,7 +54,7 @@ int main()
     int number;
     int max = INT_MIN;
     int t = 0;
-    cout << "Ââåäèòå ïîñëåäîâàòåëüíîñòü èç " << n << " ÷èñåë:" << endl;
+    cout << "Ã‚Ã¢Ã¥Ã¤Ã¨Ã²Ã¥ Ã¯Ã®Ã±Ã«Ã¥Ã¤Ã®Ã¢Ã Ã²Ã¥Ã«Ã¼Ã­Ã®Ã±Ã²Ã¼ Ã¨Ã§ " << n << " Ã·Ã¨Ã±Ã¥Ã«:" << endl;
     for (int i = 0; i < n; i++) {
         cin >> number;
         if (number % 2 == 0) {
@@ -67,16 +67,16 @@ int main()
         }
     }
     if (max != INT_MIN) {
-        cout << "Íàèáîëüøåå íå÷åòíîå: " << max << endl;
+        cout << "ÃÃ Ã¨Ã¡Ã®Ã«Ã¼Ã¸Ã¥Ã¥ Ã­Ã¥Ã·Ã¥Ã²Ã­Ã®Ã¥: " << max << endl;
     }
     else {
-        cout << "Íå÷åòíûõ ÷èñåë íåò" << endl;
+        cout << "ÃÃ¥Ã·Ã¥Ã²Ã­Ã»Ãµ Ã·Ã¨Ã±Ã¥Ã« Ã­Ã¥Ã²" << endl;
     }
-    cout << "Êîëè÷åñòâî ÷åòíûõ: " << t << endl;
+    cout << "ÃŠÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã·Ã¥Ã²Ã­Ã»Ãµ: " << t << endl;
     return 0;
 }
  
-//íîìåð 3
+//Ã­Ã®Ã¬Ã¥Ã° 3
  
 #include <iostream>
 using namespace std;
@@ -104,13 +104,13 @@ int main() {
  
    n[max] = x;
 
-    cout << "Ðåçóëüòàò:" << endl;
+    cout << "ÃÃ¥Ã§Ã³Ã«Ã¼Ã²Ã Ã²:" << endl;
     for (int i = 0; i < N; i++) {
         cout << n[i] << " ";
     }
 }
  
-//íîìåð 4
+//Ã­Ã®Ã¬Ã¥Ã° 4
  
  
 #include <iostream>
@@ -130,14 +130,14 @@ int main() {
     }
     if (max < min) {
         double r = n[min] * n[max];
-        cout << "Ïðîèçâåäåíèå: " << r << endl;
+        cout << "ÃÃ°Ã®Ã¨Ã§Ã¢Ã¥Ã¤Ã¥Ã­Ã¨Ã¥: " << r << endl;
     }
     else {
-        cout << "Óñëîâèå íå âûïîëíÿåòñÿ" << endl;
+        cout << "Ã“Ã±Ã«Ã®Ã¢Ã¨Ã¥ Ã­Ã¥ Ã¢Ã»Ã¯Ã®Ã«Ã­Ã¿Ã¥Ã²Ã±Ã¿" << endl;
     }
 }
  
-//íîìåð 5
+//Ã­Ã®Ã¬Ã¥Ã° 5
  
 #include <iostream>
 using namespace std;
@@ -157,14 +157,14 @@ int main()
     }
     if (min == 4 && max == 9) {
         double v = (n[min] * n[max]) / 2;
-        cout << "Ñðåäíåå àðèôìåòè÷åñêîå ðàâíî: "<<v;
+        cout << "Ã‘Ã°Ã¥Ã¤Ã­Ã¥Ã¥ Ã Ã°Ã¨Ã´Ã¬Ã¥Ã²Ã¨Ã·Ã¥Ã±ÃªÃ®Ã¥ Ã°Ã Ã¢Ã­Ã®: "<<v;
     }
     else {
-        cout << "Íå âûïîëíèëîñü";
+        cout << "ÃÃ¥ Ã¢Ã»Ã¯Ã®Ã«Ã­Ã¨Ã«Ã®Ã±Ã¼";
     }
 }
  
-//íîìåð 6
+//Ã­Ã®Ã¬Ã¥Ã° 6
  
 #include <iostream>
 using namespace std;
@@ -186,17 +186,17 @@ int main()
         for (int i = 0; i < N; i++) {
             arr[i] /= 2;
         }
-        cout << "Ìàññèâ ïîñëå ïðåîáðàçîâàíèÿ: ";
+        cout << "ÃŒÃ Ã±Ã±Ã¨Ã¢ Ã¯Ã®Ã±Ã«Ã¥ Ã¯Ã°Ã¥Ã®Ã¡Ã°Ã Ã§Ã®Ã¢Ã Ã­Ã¨Ã¿: ";
         for (int i = 0; i < N; i++) {
             cout << arr[i] << "\n";
         }
     }
     else {
-        cout << "íå âûïîëíÿåòñÿ";
+        cout << "Ã­Ã¥ Ã¢Ã»Ã¯Ã®Ã«Ã­Ã¿Ã¥Ã²Ã±Ã¿";
     }
 }
  
-//íîìåð 7
+//Ã­Ã®Ã¬Ã¥Ã° 7
  
 #include <iostream>
 using namespace std;
@@ -225,7 +225,7 @@ int main()
         return 0;
 }
  
-//íîìåð 8
+//Ã­Ã®Ã¬Ã¥Ã° 8
  
 #include <iostream>
 using namespace std;
@@ -248,7 +248,7 @@ int main()
             arr[i] = arr[max];
         }
     }
-    cout << "Íîâûé ìàññèâ: ";
+    cout << "ÃÃ®Ã¢Ã»Ã© Ã¬Ã Ã±Ã±Ã¨Ã¢: ";
     for (int i = 0; i < N; i++){
         cout << arr[i] << " ";
     }
