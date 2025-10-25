@@ -1,2 +1,2 @@
 ps
-echo "number of  processes: $(ps | wc -1)"
+echo "number of  processes: $(ps | wc -l)"
