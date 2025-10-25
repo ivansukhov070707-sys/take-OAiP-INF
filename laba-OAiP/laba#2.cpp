@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cctype>
-#include <cstring>
 using namespace std;
 
 int main() {
@@ -88,54 +87,60 @@ int main() {
         if (first == tolower(*lastChar)) sameEnds++;
     }
 
-    // 6. Самая короткая общая подстрока между двумя словами
-    char shortestSub[256] = "";  // Для хранения самой короткой подстроки
-    int shortestLen = 1000;      // Длина самой короткой подстроки
-    
+    // 6. Самая короткая общая подстрока между двумя словами (упрощенная версия)
+    char shortestSub[256] = "";
+    int shortestLen = 1000;
+    bool foundAny = false;
+
     // Перебираем все пары слов
     for (int i = 0; i < 10; i++) {
         for (int j = i + 1; j < 10; j++) {
-            char* word1 = words[i];  // Первое слово пары
-            char* word2 = words[j];  // Второе слово пары
-            
-            // Перебираем все возможные подстроки первого слова
-            for (int start = 0; word1[start] != '\0'; start++) {
-                for (int end = start; word1[end] != '\0'; end++) {
-                    int subLen = end - start + 1;  // Длина текущей подстроки
-                    
-                    // Пропускаем если подстрока длиннее уже найденной самой короткой
-                    if (subLen >= shortestLen) continue;
-                    
-                    // Создаем временную подстроку
-                    char tempSub[256];
-                    int pos = 0;
-                    for (int k = start; k <= end; k++) {
-                        tempSub[pos++] = word1[k];
-                    }
-                    tempSub[pos] = '\0';  // Завершаем строку
-                    
-                    // Проверяем, содержится ли эта подстрока во втором слове
-                    bool found = false;
-                    for (int m = 0; word2[m] != '\0'; m++) {
+            char* word1 = words[i];
+            char* word2 = words[j];
+
+            // Перебираем все подстроки первого слова
+            for (int start1 = 0; word1[start1] != '\0'; start1++) {
+                for (int end1 = start1; word1[end1] != '\0'; end1++) {
+                    int currentLen = end1 - start1 + 1;
+
+                    // Пропускаем слишком длинные подстроки
+                    if (currentLen >= shortestLen) continue;
+
+                    // Проверяем, есть ли эта подстрока во втором слове
+                    bool foundInSecond = false;
+
+                    // Перебираем все позиции во втором слове
+                    for (int start2 = 0; word2[start2] != '\0'; start2++) {
                         bool match = true;
-                        // Проверяем совпадение символов
-                        for (int n = 0; n < subLen; n++) {
-                            if (word2[m + n] == '\0' || 
-                                tolower(word1[start + n]) != tolower(word2[m + n])) {
+
+                        // Сравниваем символы
+                        for (int k = 0; k < currentLen; k++) {
+                            // Если вышли за границы второго слова или символы не совпадают
+                            if (word2[start2 + k] == '\0' ||
+                                tolower(word1[start1 + k]) != tolower(word2[start2 + k])) {
                                 match = false;
                                 break;
                             }
                         }
+
                         if (match) {
-                            found = true;
+                            foundInSecond = true;
                             break;
                         }
                     }
-                    
-                    // Если нашли общую подстроку и она короче текущей самой короткой
-                    if (found && subLen < shortestLen) {
-                        shortestLen = subLen;
-                        strcpy(shortestSub, tempSub);  // Копируем найденную подстроку
+
+                    // Если нашли общую подстроку
+                    if (foundInSecond) {
+                        foundAny = true;
+                        shortestLen = currentLen;
+
+                        // Копируем подстроку вручную
+                        int copyIndex = 0;
+                        for (int k = start1; k <= end1; k++) {
+                            shortestSub[copyIndex] = word1[k];
+                            copyIndex++;
+                        }
+                        shortestSub[copyIndex] = '\0';  // Завершаем строку
                     }
                 }
             }
@@ -148,12 +153,13 @@ int main() {
     cout << "3. Букв 'a' в последнем слове: " << lastWordA << endl;
     cout << "4. Строка в нижнем регистре: " << lowerStr << endl;
     cout << "5. Слов с одинаковыми концами: " << sameEnds << endl;
-    
+
     // Вывод результата 6-й задачи
-    if (shortestLen < 1000) {
-        cout << "6. Самая короткая общая подстрока: '" << shortestSub 
-             << "' (длина: " << shortestLen << ")" << endl;
-    } else {
+    if (foundAny) {
+        cout << "6. Самая короткая общая подстрока: '" << shortestSub
+            << "' (длина: " << shortestLen << ")" << endl;
+    }
+    else {
         cout << "6. Общих подстрок не найдено" << endl;
     }
 
