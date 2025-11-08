@@ -69,7 +69,9 @@ SELECT * FROM borrowed_books WHERE return_date IS NULL;
 
 --#5
 -- 1. Книги автора
-SELECT * FROM books WHERE author_id = 1;
+SELECT books.*, authors.name as author_name FROM books 
+JOIN authors ON books.author_id = authors.id 
+WHERE author_id = 1;
 
 -- 2. Книги по жанру  
 SELECT * FROM books WHERE genre = 'Роман';
@@ -85,3 +87,4 @@ SELECT * FROM borrowed_books WHERE return_date IS NULL;
 --UPDATE users SET name = 'Новое имя' WHERE id = 1;
 DELETE FROM borrowed_books WHERE user_id = 1;
 DELETE FROM users WHERE id = 1;
+
